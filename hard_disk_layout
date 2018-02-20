@@ -1,0 +1,17 @@
+https://www.ibm.com/developerworks/library/l-lpic1-102-1/index.html
+
+----------------------------------
+Difference between File system created by fdisk and file system created by mkfs - linux
+
+https://superuser.com/questions/317724/difference-between-file-system-created-by-fdisk-and-file-system-created-by-mkfs
+
+Answer:
+To use an analogy, think of fdisk as setting up the fences around your garden with small fences separating the areas that you want to have for grass, fruit trees and vegetables. While it sets up these walls (partitons) for you it does not actually put anything in those spaces.
+
+Then you use mkfs to format those areas into the ways that you are wanting, you choose your filesystem (be it grass, fruit or vegetable) and mkfs puts it all in place and makes it usable.
+
+What you are seeing in "partition type" is a legacy identifier that tells the system what type of operating system is likely to be able to read the contents, this is mainly so that an operating system such as Windows can quickly look at the partition type and (if it is a type it does not understand) then it can quickly move to the next partition to check that for filesystems. This does not stop the operating system from going further and actually checking the filesystem itself to see if it can read it, it just gives the OS an idea what to expect.
+
+You can still put a Windows filesystem (NTFS) in a Linux (type 83) partition as you have done but whether or not any operating system chooses to read or ignore it is up to the designers of that operating system.
+---------------------------------
+
